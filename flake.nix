@@ -42,7 +42,7 @@
           sources = rec {
             default = qwerty;
             qwerty = [./modules/qwerty.nix];
-            colemak-dh = [./modules/colemak-dh];
+            colemak-dh = [./modules/colemak-dh.nix];
           };
         in
           builtins.mapAttrs (_: modules: mkNeovimConfiguration modules) sources;
