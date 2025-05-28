@@ -49,4 +49,8 @@
     encoding = "UTF-8";
     timeoutlen = 1000;
   };
+
+  vim.globals = {
+    loaded_netrwPlugin = 1;
+  };
 }
