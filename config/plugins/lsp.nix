@@ -3,7 +3,21 @@
     enable = true;
 
     inlayHints.enable = true;
-    lightbulb.enable = true;
+    lightbulb = {
+      enable = true;
+
+      setupOpts = let
+        commonTexts = {
+          text = "󰌶 ";
+          lens_text = " ";
+        };
+      in {
+        sign = commonTexts;
+        virtual_text = commonTexts;
+        float = commonTexts;
+        status_text = commonTexts;
+      };
+    };
     lspconfig.enable = true;
 
     mappings = {
