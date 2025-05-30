@@ -12,7 +12,6 @@
     };
     nix-helpers = {
       url = "github:keonly/nix-helpers";
-      inputs.flake-parts.follows = "flake-parts";
     };
   };
 
