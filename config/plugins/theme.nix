@@ -1,7 +1,7 @@
 {
-  vim.extraPlugins.catppuccin = {
+  vim.lazy.plugins.catppuccin = {
     package = "catppuccin";
-    setup =
+    after =
       # lua
       ''
         require("catppuccin").setup({
