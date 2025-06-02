@@ -17,7 +17,7 @@
     hlsearch = false;
 
     # Appearance
-    numberwidth = 4;
+    numberwidth = 3;
     number = true;
     relativenumber = true;
     termguicolors = true;
@@ -36,7 +36,7 @@
     foldlevel = 99;
     foldlevelstart = 99;
     foldenable = true;
-    # fillchars = "[[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]";
+    fillchars = "eob:\ ,fold:\ ,foldopen:,foldsep:\ ,foldclose:";
 
     # Behaviour
     swapfile = false;
