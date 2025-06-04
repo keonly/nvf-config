@@ -2,6 +2,12 @@
   vim.lazy.plugins."statuscol.nvim" = {
     package = pkgs.vimPlugins.statuscol-nvim;
     setupModule = "statuscol";
+    event = [
+      {
+        event = "User";
+        pattern = "LazyFile";
+      }
+    ];
 
     after =
       # lua
