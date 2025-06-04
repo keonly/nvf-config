@@ -43,10 +43,14 @@
           # lua
           ''
             function(virtText, lnum, endLnum, width, truncate)
+              local alignLimitByTextWidth = true -- limit the alignment of the fold text by:
+              -- true: the textwidth value, false: the width of the current window
+              local alignLimiter = alignLimitByTextWidth and vim.opt.colorcolumn["_value"]
+                or vim.api.nvim_win_get_width(0)
               local newVirtText = {}
               local totalLines = vim.api.nvim_buf_line_count(0)
               local foldedLines = endLnum - lnum
-              local suffix = ("  󰁂 %d lines, %d%%"):format(foldedLines, foldedLines / totalLines * 100)
+              local suffix = (" 󰁂 %d %d%%"):format(foldedLines, foldedLines / totalLines * 100)
               local sufWidth = vim.fn.strdisplaywidth(suffix)
               local targetWidth = width - sufWidth
               local curWidth = 0
@@ -68,8 +72,7 @@
                 end
                 curWidth = curWidth + chunkWidth
               end
-              local rAlignAppndx = math.max(math.min(vim.opt.textwidth["_value"], width - 1) - curWidth - sufWidth, 0)
-              -- local rAlignAppndx = math.max(math.min(vim.api.nvim_win_get_width(0), width - 1) - curWidth - sufWidth, 0)
+              local rAlignAppndx = math.max(math.min(alignLimiter, width - 1) - curWidth - sufWidth, 0)
               suffix = (" "):rep(rAlignAppndx) .. suffix
               table.insert(newVirtText, { suffix, "MoreMsg" })
               return newVirtText
