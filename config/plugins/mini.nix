@@ -7,7 +7,6 @@
     cursorword.enable = true;
     hipatterns.enable = true;
     icons.enable = true;
-    jump.enable = true;
     move = {
       enable = true;
 
