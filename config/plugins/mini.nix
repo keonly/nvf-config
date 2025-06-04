@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   vim.mini = {
     ai.enable = true;
     basics.enable = true;
@@ -24,11 +24,22 @@
         };
       };
     };
-    notify.enable = true;
-    pairs.enable = true;
+    pairs = {
+      enable = true;
+
+      setupOpts = {
+        mappings = {
+          "`" = {
+            action = "closeopen";
+            pair = "``";
+            neigh_pattern = "[^\\`].";
+            register = {cr = false;};
+          };
+        };
+      };
+    };
     snippets.enable = true;
     splitjoin.enable = true;
     surround.enable = true;
-    visits.enable = true;
   };
 }
