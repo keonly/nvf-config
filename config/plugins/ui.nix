@@ -15,6 +15,10 @@
             input.title = "";
           };
         };
+
+        messages = {
+          enabled = false;
+        };
       };
     };
 
