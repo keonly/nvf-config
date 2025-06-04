@@ -1,6 +1,5 @@
 {
   vim.binds = {
-    cheatsheet.enable = true;
     hardtime-nvim.enable = true;
 
     whichKey = {
