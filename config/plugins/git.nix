@@ -24,8 +24,8 @@
       enable = true;
 
       mappings = {
-        toggleBlame = "<leader>gb";
-        toggleDeleted = "<leader>gd";
+        toggleBlame = "<leader>tgb";
+        toggleDeleted = "<leader>tgd";
         diffProject = "<leader>gpd";
         diffThis = "<leader>gtd";
       };
