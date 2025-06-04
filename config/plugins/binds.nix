@@ -6,9 +6,9 @@
     whichKey = {
       enable = true;
       setupOpts = {
+        preset = "helix";
         icons = {
-          preset = "modern";
-          separator = "󰁔";
+          separator = "│";
         };
       };
     };
