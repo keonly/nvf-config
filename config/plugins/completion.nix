@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   vim.autocomplete = {
     blink-cmp = {
       enable = true;
@@ -9,14 +9,14 @@
       };
 
       sourcePlugins = {
-        # blink-compat.enable = true;
-        # blink-emoji-nvim.enable = true;
-        # blink-ripgrep-nvim.enable = true;
-        # blink-cmp-spell.enable = true;
-
         emoji.enable = true;
         ripgrep.enable = true;
         spell.enable = true;
+        blink-cmp-avante = {
+          enable = true;
+          package = pkgs.vimPlugins.blink-cmp-avante;
+          module = "blink-cmp-avante";
+        };
       };
     };
   };
