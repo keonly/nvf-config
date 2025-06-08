@@ -21,8 +21,10 @@
             model = "claude-sonnet-4";
             reasoning_effort = "high";
             timeout = 300000; # 5 mins
-            temperature = 0.75;
-            max_tokens = 20480;
+            extra_request_body = {
+              temperature = 0.75;
+              max_tokens = 20480;
+            };
           };
         };
 
