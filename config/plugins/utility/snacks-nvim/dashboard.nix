@@ -1,24 +1,25 @@
 {lib, ...}: {
-  vim.utility.snacks-nvim.setupOpts.dashboard = {
-    preset.header = builtins.concatStringsSep "\n" [
-      "        ___           ___                       ___         "
-      "       /\\__\\         /\\__\\          ___        /\\__\\        "
-      "      /::|  |       /:/  /         /\\  \\      /::|  |       "
-      "     /:|:|  |      /:/  /          \\:\\  \\    /:|:|  |       "
-      "    /:/|:|  |__   /:/__/  ___      /::\\__\\  /:/|:|__|__     "
-      "   /:/ |:| /\\__\\  |:|  | /\\__\\  __/:/\\/__/ /:/ |::::\\__\\    "
-      "   \\/__|:|/:/  /  |:|  |/:/  / /\\/:/  /    \\/__/~~/:/  /    "
-      "       |:/:/  /   |:|__/:/  /  \\::/__/           /:/  /     "
-      "       |::/  /     \\::::/__/    \\:\\__\\          /:/  /      "
-      "       /:/  /       ~~~~         \\/__/         /:/  /       "
-      "       \\/__/                                   \\/__/        "
-    ];
+  vim.utility.snacks-nvim.setupOpts.dashboard = let
+    width = 30;
+  in {
+    inherit width;
     sections =
       lib.generators.mkLuaInline
       # lua
       ''
         {
-          {section = "header"},
+          function()
+            local handle = io.popen("curl -s 'wttr.in/?MQT0'")
+            local weather = handle and handle:read("*a") or "wttr.in unavailable! :("
+            if handle then handle:close() end
+
+            return {
+              text = {
+                weather .. "\n",
+                padding = 1,
+              },
+            }
+          end,
           function()
             local hour = tonumber(vim.fn.strftime('%H'))
             local part_id = math.floor((hour + 4) / 8) + 1
@@ -29,22 +30,39 @@
               text = { ('Good %s, %s'):format(day_part, username), hl = 'header', padding = 1 },
             }
           end,
-          { text = { "" } },
-          { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-          { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-          { text = { "" } },
+          { text = { "\n" } },
+          {
+            section = "keys",
+            padding = 2,
+          },
           function()
             local version = vim.version()
             local print_version = "v" .. version.major .. "." .. version.minor .. "." .. version.patch
-            local datetime = os.date("%Y/%m/%d")
+            local date = os.date("%Y/%m/%d")
 
             return {
               align = 'center',
-              text = { (' %s -  %s'):format(print_version, datetime), hl = 'Nontext', padding = 1 }
+              text = {
+                { ' ', hl = 'SnacksDashboardNormal' },
+                { print_version, hl = 'NonText' },
+                { '    ', hl = 'SnacksDashboardNormal' },
+                { date, hl = 'NonText' },
+              };
             }
           end,
         }
       '';
+  };
+
+  vim.highlight = {
+    SnacksDashboardIcon = {
+      fg = "#f4f4f4";
+      bold = true;
+    };
+    SnacksDashboardDesc = {fg = "#c6c6c6";};
+    SnacksDashboardKey = {
+      fg = "#f4f4f4";
+      bold = true;
+    };
   };
 }
