@@ -4,15 +4,26 @@
       enable = true;
 
       setupOpts = {
-        provider = "claude";
-        auto_suggestions_provider = "claude";
+        provider = "copilot";
+        cursor_applying_provider = "copilot";
 
         behaviour = {
+          auto_suggestion = false;
           enable_claude_text_editor_tool_mode = true;
           enable_cursor_planning_mode = true;
           enable_token_counting = true;
-          auto_apply_diff_after_generation = true;
-          auto_suggestions = true;
+        };
+
+        providers = {
+          copilot = {
+            endpoint = "https://api.githubcopilot.com";
+            allow_insecure = false;
+            model = "claude-sonnet-4";
+            reasoning_effort = "high";
+            timeout = 300000; # 5 mins
+            temperature = 0.75;
+            max_tokens = 20480;
+          };
         };
 
         mappings = {
