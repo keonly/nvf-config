@@ -24,7 +24,7 @@
       termguicolors = true;
       colorcolumn = "80";
       signcolumn = "yes";
-      cmdheight = 1;
+      cmdheight = 0;
       scrolloff = 10;
       completeopt = "menuone,noinsert,noselect";
       showmode = false;
