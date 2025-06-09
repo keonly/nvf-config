@@ -18,7 +18,6 @@
           copilot = {
             endpoint = "https://api.githubcopilot.com";
             allow_insecure = false;
-            model = "claude-sonnet-4";
             reasoning_effort = "high";
             timeout = 300000; # 5 mins
             extra_request_body = {
