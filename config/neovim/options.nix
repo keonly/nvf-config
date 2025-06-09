@@ -31,7 +31,6 @@
       conceallevel = 1;
       cursorline = true;
       cursorlineopt = "number";
-      winborder = "rounded";
 
       # Fold
       foldcolumn = "1";
