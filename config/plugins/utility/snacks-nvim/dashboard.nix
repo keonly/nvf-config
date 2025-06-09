@@ -8,18 +8,15 @@
       # lua
       ''
         {
-          function()
-            local handle = io.popen("curl -s 'wttr.in/?MQT0'")
-            local weather = handle and handle:read("*a") or "wttr.in unavailable! :("
-            if handle then handle:close() end
-
-            return {
-              text = {
-                weather .. "\n",
-                padding = 1,
-              },
-            }
-          end,
+          {
+            align = "center",
+            text = {
+              {'   /| ､       \n'},
+              {'  (°､ ｡ 7     \n'},
+              {'   |､  ~ヽ    \n'},
+              {'   じしf_,)〳 \n'},
+            },
+          },
           function()
             local hour = tonumber(vim.fn.strftime('%H'))
             local part_id = math.floor((hour + 4) / 8) + 1
