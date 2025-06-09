@@ -39,15 +39,10 @@
           },
           integrations = {
             gitsigns = true,
-            indent_blankline = {
-              enabled = true,
-              scope_color = "",
-              colored_indent_levels = false,
-            },
-            lsp_saga = true,
-            neotree = true,
-            cmp = true,
             dap = true,
+            dap_ui = true,
+            noice = true,
+            flash = true,
             native_lsp = {
               enabled = true,
               virtual_text = {
@@ -65,13 +60,13 @@
               inlay_hints = {
                 background = true,
               },
+              snacks = {
+                enabled = true,
+                indent_scope_color = "overlay0",
+              };
             },
-            notify = true,
-            -- octo = true,
             treesitter = true,
-            telescope = {
-              enabled = true,
-            },
+            which_key = true,
           },
         })
         vim.cmd.colorscheme("catppuccin")
