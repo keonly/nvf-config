@@ -29,6 +29,11 @@
                 FloatBorder = { fg = mocha.text },
                 NoiceCmdlineIcon = { fg = mocha.text },
                 NoiceCmdlinePopupBorder = { fg = mocha.text },
+                BlinkCmpMenuBorder = { fg = mocha.text },
+                BlinkCmpMenu = { fg = mocha.text },
+                SnacksDashboardIcon = { fg = mocha.text, style = { "bold" } },
+                SnacksDashboardKey = { fg = mocha.text, style = { "bold" } },
+                SnacksDashboardDesc = { fg = mocha.subtext0 },
               }
             end,
           },

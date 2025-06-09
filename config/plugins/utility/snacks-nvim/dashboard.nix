@@ -50,16 +50,4 @@
         }
       '';
   };
-
-  vim.highlight = {
-    SnacksDashboardIcon = {
-      fg = "#f4f4f4";
-      bold = true;
-    };
-    SnacksDashboardDesc = {fg = "#c6c6c6";};
-    SnacksDashboardKey = {
-      fg = "#f4f4f4";
-      bold = true;
-    };
-  };
 }
