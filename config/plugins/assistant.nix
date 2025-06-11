@@ -52,7 +52,7 @@
             insert = "<C-s>";
           };
           cancel = {
-            normal = ["<C-c>" "<Esc>" "q"];
+            normal = ["<C-c>" "q"];
             insert = ["<C-c>"];
           };
           sidebar = {
