@@ -45,8 +45,8 @@
       signatureHelp = "<leader>ls";
       documentHighlight = "<leader>lH";
 
-      codeAction = "<leader>ca";
-      format = "<leader>cf";
+      codeAction = "<leader>la";
+      format = "<leader>lf";
     };
 
     otter-nvim = {
