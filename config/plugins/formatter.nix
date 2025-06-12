@@ -21,4 +21,14 @@
       };
     };
   };
+
+  vim.keymaps = [
+    {
+      key = "<leader>cf";
+      mode = "n";
+      action = "require('conform').format";
+      lua = true;
+      desc = "Conform format";
+    }
+  ];
 }
