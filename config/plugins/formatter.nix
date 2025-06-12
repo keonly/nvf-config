@@ -16,6 +16,7 @@
           json = ["prettier"];
           markdown = ["prettier"];
           nix = ["alejandra"];
+          python = ["ruff_format"];
         };
       };
     };
