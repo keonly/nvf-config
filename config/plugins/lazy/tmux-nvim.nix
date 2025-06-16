@@ -5,6 +5,7 @@
 
     setupOpts = {
       swap.enable_default_keybindings = false;
+      copy_sync.enable = false;
     };
 
     after =
