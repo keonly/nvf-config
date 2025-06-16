@@ -11,6 +11,7 @@
       enable = true;
 
       setupOpts = {
+        # FIXME: These aren't working properly after adding tmux-nvim
         mappings = {
           left = "<C-S-h>";
           right = "<C-S-l>";
