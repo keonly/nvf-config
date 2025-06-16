@@ -6,13 +6,16 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
     };
+
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nix-helpers = {
       url = "github:keonly/nix-helpers";
     };
+
   };
 
   outputs = {
