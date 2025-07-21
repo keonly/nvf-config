@@ -30,7 +30,7 @@
       showmode = false;
       conceallevel = 1;
       cursorline = true;
-      cursorlineopt = "number";
+      cursorlineopt = "line";
 
       # Fold
       foldcolumn = "1";

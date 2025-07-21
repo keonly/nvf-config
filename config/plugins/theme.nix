@@ -24,6 +24,7 @@
           highlight_overrides = {
             mocha = function(mocha)
               return {
+                CursorLine = { bg = mocha.surface1 },
                 CursorLineNr = { fg = mocha.text },
                 LineNr = { fg = mocha.overlay1 },
                 FloatBorder = { fg = mocha.text },
